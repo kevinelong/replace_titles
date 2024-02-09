@@ -1,16 +1,5 @@
 import re
-def capture_sequence_of_capitalized_words(text):
-    return re.findall('([A-Z]+[\']*[a-z]+\s*[and|&|the|or]*\s*[A-Z]*[\']*[a-z]*\s*[and|&|the]*\s*[A-Z]*[\']*[a-z]*\s*[and|&|the]*\s*[A-Z]+[\']*[a-z]+\s*[and|&|the]*\s*)+', text)
 
-
-    # return re.sub(r'([A-Z][a-z\'\&]+)+\s[a-z0-9\w\':]+', r'_\1_', text)
-print(capture_sequence_of_capitalized_words("""
-This phrase talks about The Beauty and the Beast, and Cinderella, and also The Pastime Bar and Grill. 
-    1. Obvious Title: Blach blah blah.
-    2. Less - Obviously a good time
-    3. O'hara Bar & Grill - drink here
-
-"""))
 def replace_titles(text):
     #  TODO - Do the thing.
     matches = re.findall('([A-Z]+[\']*[a-z]+\s*[and|&|the]*\s*[A-Z]*[\']*[a-z]*\s*[and|&|the]*\s*[A-Z]*[\']*[a-z]*\s*[and|&|the]*\s*[A-Z]+[\']*[a-z]+\s*[and|&|the]*\s*)+', text)
